@@ -1,0 +1,161 @@
+/* ============================================================
+   North York Boxing Studio — design layer
+   Loaded AFTER css/styles.css. Base theme stays untouched.
+   ============================================================ */
+:root {
+  --nyb-bg: #0b0b0d;
+  --nyb-bg-2: #131316;
+  --nyb-border: #26262b;
+  --nyb-text: #f2f2f3;
+  --nyb-muted: #9a9aa2;
+  --nyb-accent: #e11d2e;       /* Change to the logo's brand color */
+  --nyb-accent-hover: #ff3346;
+  --nyb-font-head: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --nyb-font-body: "Lato", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  background: var(--nyb-bg);
+  color: var(--nyb-text);
+  font-family: var(--nyb-font-body);
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3, .h1, .h2, .h3 {
+  font-family: var(--nyb-font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: #fff;
+}
+.lead { color: #c9c9ce; font-weight: 300; }
+.text-muted-light { color: var(--nyb-muted); }
+.eyebrow {
+  font-family: var(--nyb-font-head);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.85rem;
+  color: var(--nyb-accent);
+  margin-bottom: 1rem;
+}
+a { color: var(--nyb-text); }
+a:hover { color: var(--nyb-accent-hover); }
+
+/* Buttons */
+.btn-primary,
+.btn-primary:focus {
+  background-color: var(--nyb-accent);
+  border-color: var(--nyb-accent);
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: var(--nyb-accent-hover) !important;
+  border-color: var(--nyb-accent-hover) !important;
+  color: #fff;
+}
+.btn { border-radius: 0; font-family: var(--nyb-font-head); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.btn-lg { padding: 0.9rem 2rem; }
+.btn-outline-light:hover { color: #000; }
+.text-primary { color: var(--nyb-accent) !important; }
+
+/* Navigation */
+.site-nav {
+  background: rgba(11, 11, 13, 0.92);
+  border-bottom: 1px solid var(--nyb-border);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  backdrop-filter: blur(6px);
+}
+.site-logo { height: 40px; width: auto; display: block; }
+.site-logo-footer { margin-left: auto; margin-right: auto; }
+@media (min-width: 992px) { .site-logo-footer { margin-left: 0; } }
+
+/* Hero */
+header.masthead {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(225, 29, 46, 0.28), transparent 60%),
+    linear-gradient(180deg, #0b0b0d 0%, #16161a 100%);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid var(--nyb-border);
+}
+header.masthead:before { display: none; }
+header.masthead h1, header.masthead .h1 { font-size: 2.4rem; font-weight: 700; }
+@media (min-width: 768px) {
+  header.masthead { padding-top: 10rem; padding-bottom: 10rem; }
+  header.masthead h1, header.masthead .h1 { font-size: 4rem; }
+}
+
+/* Services — photos fit their box without distortion */
+.showcase { background: var(--nyb-bg); }
+.showcase .showcase-img {
+  min-height: 22rem;
+  background-color: var(--nyb-bg-2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.showcase-img-1 { background-image: url("../assets/img/photo-1.jpg"); }
+.showcase-img-2 { background-image: url("../assets/img/photo-2.jpg"); }
+.showcase-img-3 { background-image: url("../assets/img/photo-3.jpg"); }
+.showcase .showcase-text {
+  padding: 3rem 1.5rem;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.showcase .row:nth-child(even) .showcase-text { background: var(--nyb-bg-2); }
+.showcase .row:nth-child(odd) .showcase-text { background: var(--nyb-bg); }
+@media (min-width: 768px) {
+  .showcase .showcase-text { padding: 5rem 4rem; }
+}
+@media (min-width: 992px) {
+  .showcase .showcase-img { min-height: 32rem; }
+  .showcase .showcase-text { padding: 6rem; }
+}
+
+/* How it works */
+.features-icons { background: var(--nyb-bg-2); border-top: 1px solid var(--nyb-border); border-bottom: 1px solid var(--nyb-border); padding-top: 5rem; padding-bottom: 5rem; }
+.features-icons h3 { font-size: 1.5rem; margin-top: 0.5rem; }
+.features-icons .features-icons-item .features-icons-icon i { font-size: 3.5rem; }
+
+/* Final CTA */
+.call-to-action {
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(225, 29, 46, 0.3), transparent 65%),
+    var(--nyb-bg);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.call-to-action:before { display: none; }
+.call-to-action h2 { font-size: 2rem; }
+@media (min-width: 768px) { .call-to-action h2 { font-size: 3rem; } }
+
+/* Footer */
+footer.footer {
+  background: #060607;
+  border-top: 1px solid var(--nyb-border);
+  color: var(--nyb-muted);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+footer.footer a { color: var(--nyb-text); text-decoration: none; }
+footer.footer a:hover { color: var(--nyb-accent-hover); }
+
+/* Small phones */
+@media (max-width: 575.98px) {
+  .site-logo { height: 32px; }
+  .site-nav .btn-cta { padding: 0.45rem 0.8rem; font-size: 0.8rem; }
+  .btn-lg { width: 100%; }
+}
+
+/* Keep logo + button on one row on small phones */
+.site-nav > .container { flex-wrap: nowrap; gap: 0.75rem; }
+.site-nav .navbar-brand { margin-right: 0; }
